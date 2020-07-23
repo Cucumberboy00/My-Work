@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Catan game</title>
+<link rel="stylesheet" href="catan.css"/>
+</head>
+<body>
+<img class="background" src="images/background.png"></img>
+<table>
+    <div class="diceArea">
+        <img class="diceOne" src="images/dice4.png"></img>
+        <img class="diceTwo" src="images/dice4.png"></img>
+    </div>
+    <div id="messageArea"><img  class="textarea" src="images/menu.png"><img class="thief" src="images/thief.gif"></img><p class="texta">Player one place Settlement</p>
+        <div class="buildOptions"><img class="roadOpt" src="images/roadopt.png" onclick="roadBuilder();"></img><img class="houseOpt" src="images/houseopt2.png" onclick="villageBuilder();"></img><img class="cityOpt" src="images/cityopt.png" onclick="cityBuilder();"></img><img class="devOpt" src="images/devcard.png" onclick="theLottery();"></img></div>
+        <div class="buttons"><button class="build" onclick="buildOptions();">Build</button><button class="trade" onclick="tradeOptions();">Trade</button><button class="devCards" onclick="devCardHand()">DevCards</button><button class="endTurn">End Turn</button></div></div></img></div>
+        <div class="stealFrom"><button class="red" onclick="steelFrom('red');">Red</button><button class="pink" onclick="steelFrom('pink');">Pink</button><button class="green" onclick="steelFrom('green');">Green</button></div>
+        <div class="resources"><img class="woodSel" onclick="selectedResource('wood');"></img><img class="sheepSel" onclick="selectedResource('sheep');"></img><img class="wheatSel" onclick="selectedResource('wheat');"></img><img class="oreSel" onclick="selectedResource('ore');"></img><img class="brickSel" onclick="selectedResource('brick');"></img></div>
+        <div class="trades"><button class="gameTrade" onclick="trade();">Game</button><button class="playerTrade" onclick="trade();">Players</button></div>
+    <div id="devDeck">
+        <img class ="deckbackground"></img>
+        <div class="devcard">
+            <div class="devcardfront"></div>
+            <div class="devcardback"></div>
+        </div>
+    </div>
+    <img class="goBack" onclick="goBack();" src="images/back.png"></img>
+    <div class="playerDev"></div>
+    <div class="buildAreas">
+        <div class="houses">
+        <div class="A0"><img class="build" onclick="buildHouse('A0');" src="images/circle.png"></img></div>
+        <div class="A1"><img class="build" onclick="buildHouse('A1');" src="images/circle.png"></img></div>
+        <div class="A2"><img class="build" onclick="buildHouse('A2');" src="images/circle.png"></img></div>
+        <div class="B0"><img class="build" onclick="buildHouse('B0');" src="images/circle.png"></img></div>
+        <div class="B1"><img class="build" onclick="buildHouse('B1');" src="images/circle.png"></img></div>
+        <div class="B2"><img class="build" onclick="buildHouse('B2');" src="images/circle.png"></img></div>
+        <div class="B3"><img class="build" onclick="buildHouse('B3');" src="images/circle.png"></img></div>
+        <div class="C0"><img class="build" onclick="buildHouse('C0');" src="images/circle.png"></img></div>
+        <div class="C1"><img class="build" onclick="buildHouse('C1');" src="images/circle.png"></img></div>
+        <div class="C2"><img class="build" onclick="buildHouse('C2');" src="images/circle.png"></img></div>
+        <div class="C3"><img class="build" onclick="buildHouse('C3');" src="images/circle.png"></img></div>
+        <div class="D0"><img class="build" onclick="buildHouse('D0');" src="images/circle.png"></img></div>
+        <div class="D1"><img class="build" onclick="buildHouse('D1');" src="images/circle.png"></img></div>
+        <div class="D2"><img class="build" onclick="buildHouse('D2');" src="images/circle.png"></img></div>
+        <div class="D3"><img class="build" onclick="buildHouse('D3');" src="images/circle.png"></img></div>
+        <div class="D4"><img class="build" onclick="buildHouse('D4');" src="images/circle.png"></img></div>
+        <div class="E0"><img class="build" onclick="buildHouse('E0');" src="images/circle.png"></img></div>
+        <div class="E1"><img class="build" onclick="buildHouse('E1');" src="images/circle.png"></img></div>
+        <div class="E2"><img class="build" onclick="buildHouse('E2');" src="images/circle.png"></img></div>
+        <div class="E3"><img class="build" onclick="buildHouse('E3');" src="images/circle.png"></img></div>
+        <div class="E4"><img class="build" onclick="buildHouse('E4');" src="images/circle.png"></img></div>
+        <div class="F0"><img class="build" onclick="buildHouse('F0');" src="images/circle.png"></img></div>
+        <div class="F1"><img class="build" onclick="buildHouse('F1');" src="images/circle.png"></img></div>
+        <div class="F2"><img class="build" onclick="buildHouse('F2');" src="images/circle.png"></img></div>
+        <div class="F3"><img class="build" onclick="buildHouse('F3');" src="images/circle.png"></img></div>
+        <div class="F4"><img class="build" onclick="buildHouse('F4');" src="images/circle.png"></img></div>
+        <div class="F5"><img class="build" onclick="buildHouse('F5');" src="images/circle.png"></img></div>
+        <div class="G0"><img class="build" onclick="buildHouse('G0');" src="images/circle.png"></img></div>
+        <div class="G1"><img class="build" onclick="buildHouse('G1');" src="images/circle.png"></img></div>
+        <div class="G2"><img class="build" onclick="buildHouse('G2');" src="images/circle.png"></img></div>
+        <div class="G3"><img class="build" onclick="buildHouse('G3');" src="images/circle.png"></img></div>
+        <div class="G4"><img class="build" onclick="buildHouse('G4');" src="images/circle.png"></img></div>
+        <div class="G5"><img class="build" onclick="buildHouse('G5');" src="images/circle.png"></img></div>
+        <div class="H0"><img class="build" onclick="buildHouse('H0');" src="images/circle.png"></img></div>
+        <div class="H1"><img class="build" onclick="buildHouse('H1');" src="images/circle.png"></img></div>
+        <div class="H2"><img class="build" onclick="buildHouse('H2');" src="images/circle.png"></img></div>
+        <div class="H3"><img class="build" onclick="buildHouse('H3');" src="images/circle.png"></img></div>
+        <div class="H4"><img class="build" onclick="buildHouse('H4');" src="images/circle.png"></img></div>
+        <div class="I0"><img class="build" onclick="buildHouse('I0');" src="images/circle.png"></img></div>
+        <div class="I1"><img class="build" onclick="buildHouse('I1');" src="images/circle.png"></img></div>
+        <div class="I2"><img class="build" onclick="buildHouse('I2');" src="images/circle.png"></img></div>
+        <div class="I3"><img class="build" onclick="buildHouse('I3');" src="images/circle.png"></img></div>
+        <div class="I4"><img class="build" onclick="buildHouse('I4');" src="images/circle.png"></img></div>
+        <div class="J0"><img class="build" onclick="buildHouse('J0');" src="images/circle.png"></img></div>
+        <div class="J1"><img class="build" onclick="buildHouse('J1');" src="images/circle.png"></img></div>
+        <div class="J2"><img class="build" onclick="buildHouse('J2');" src="images/circle.png"></img></div>
+        <div class="J3"><img class="build" onclick="buildHouse('J3');" src="images/circle.png"></img></div>
+        <div class="K0"><img class="build" onclick="buildHouse('K0');" src="images/circle.png"></img></div>
+        <div class="K1"><img class="build" onclick="buildHouse('K1');" src="images/circle.png"></img></div>
+        <div class="K2"><img class="build" onclick="buildHouse('K2');" src="images/circle.png"></img></div>
+        <div class="K3"><img class="build" onclick="buildHouse('K3');" src="images/circle.png"></img></div>
+        <div class="L0"><img class="build" onclick="buildHouse('L0');" src="images/circle.png"></img></div>
+        <div class="L1"><img class="build" onclick="buildHouse('L1');" src="images/circle.png"></img></div>
+        <div class="L2"><img class="build" onclick="buildHouse('L2');" src="images/circle.png"></img></div>
+            </div>
+    <div class="roads">
+        <div class="r0"><img class="road" onclick="createRoad('r0');"></div><div class="r1"><img class="road" onclick="createRoad('r1');"></div>
+        <div class="r2"><img class="road" onclick="createRoad('r2');"></div><div class="r3"><img class="road" onclick="createRoad('r3');"></div>
+        <div class="r4"><img class="road" onclick="createRoad('r4');"></div><div class="r5"><img class="road" onclick="createRoad('r5');"></div>
+        <div class="r6"><img class="road" onclick="createRoad('r6');"></div><div class="r7"><img class="road" onclick="createRoad('r7');"></div>
+        <div class="r8"><img class="road" onclick="createRoad('r8');"></div><div class="r9"><img class="road" onclick="createRoad('r9');"></div>
+        <div class="r10"><img class="road" onclick="createRoad('r10');"></div><div class="r11"><img class="road" onclick="createRoad('r11');"></div>
+        <div class="r12"><img class="road" onclick="createRoad('r12');"></div><div class="r13"><img class="road" onclick="createRoad('r13');"></div>
+        <div class="r14"><img class="road" onclick="createRoad('r14');"></div><div class="r15"><img class="road" onclick="createRoad('r15');"></div>
+        <div class="r16"><img class="road" onclick="createRoad('r16');"></div><div class="r17"><img class="road" onclick="createRoad('r17');"></div>
+        <div class="r18"><img class="road" onclick="createRoad('r18');"></div><div class="r19"><img class="road" onclick="createRoad('r19');"></div>
+        <div class="r20"><img class="road" onclick="createRoad('r20');"></div><div class="r21"><img class="road" onclick="createRoad('r21');"></div>
+        <div class="r22"><img class="road" onclick="createRoad('r22');"></div><div class="r23"><img class="road" onclick="createRoad('r23');"></div>
+        <div class="r24"><img class="road" onclick="createRoad('r24');"></div><div class="r25"><img class="road" onclick="createRoad('r25');"></div>
+        <div class="r26"><img class="road" onclick="createRoad('r26');"></div><div class="r27"><img class="road" onclick="createRoad('r27');"></div>
+        <div class="r28"><img class="road" onclick="createRoad('r28');"></div><div class="r29"><img class="road" onclick="createRoad('r29');"></div>
+        <div class="r30"><img class="road" onclick="createRoad('r30');"></div><div class="r31"><img class="road" onclick="createRoad('r31');"></div>
+        <div class="r32"><img class="road" onclick="createRoad('r32');"></div><div class="r33"><img class="road" onclick="createRoad('r33');"></div>
+        <div class="r34"><img class="road" onclick="createRoad('r34');"></div><div class="r35"><img class="road" onclick="createRoad('r35');"></div>
+        <div class="r36"><img class="road" onclick="createRoad('r36');"></div><div class="r37"><img class="road" onclick="createRoad('r37');"></div>
+        <div class="r38"><img class="road" onclick="createRoad('r38');"></div><div class="r39"><img class="road" onclick="createRoad('r39');"></div>
+        <div class="r40"><img class="road" onclick="createRoad('r40');"></div><div class="r41"><img class="road" onclick="createRoad('r41');"></div>
+        <div class="r42"><img class="road" onclick="createRoad('r42');"></div><div class="r43"><img class="road" onclick="createRoad('r43');"></div>
+        <div class="r44"><img class="road" onclick="createRoad('r44');"></div><div class="r45"><img class="road" onclick="createRoad('r45');"></div>
+        <div class="r46"><img class="road" onclick="createRoad('r46');"></div><div class="r47"><img class="road" onclick="createRoad('r47');"></div>
+        <div class="r48"><img class="road" onclick="createRoad('r48');"></div><div class="r49"><img class="road" onclick="createRoad('r49');"></div>
+        <div class="r50"><img class="road" onclick="createRoad('r50');"></div><div class="r51"><img class="road" onclick="createRoad('r51');"></div>
+        <div class="r52"><img class="road" onclick="createRoad('r52');"></div><div class="r53"><img class="road" onclick="createRoad('r53');"></div>
+        <div class="r54"><img class="road" onclick="createRoad('r54');"></div><div class="r55"><img class="road" onclick="createRoad('r55');"></div>
+        <div class="r56"><img class="road" onclick="createRoad('r56');"></div><div class="r57"><img class="road" onclick="createRoad('r57');"></div>
+        <div class="r58"><img class="road" onclick="createRoad('r58');"></div><div class="r59"><img class="road" onclick="createRoad('r59');"></div>
+        <div class="r60"><img class="road" onclick="createRoad('r60');"></div><div class="r61"><img class="road" onclick="createRoad('r61');"></div>
+        <div class="r62"><img class="road" onclick="createRoad('r62');"></div><div class="r63"><img class="road" onclick="createRoad('r63');"></div>
+        <div class="r64"><img class="road" onclick="createRoad('r64');"></div><div class="r65"><img class="road" onclick="createRoad('r65');"></div>
+        <div class="r66"><img class="road" onclick="createRoad('r66');"></div><div class="r67"><img class="road" onclick="createRoad('r67');"></div>
+        <div class="r68"><img class="road" onclick="createRoad('r68');"></div><div class="r69"><img class="road" onclick="createRoad('r69');"></div>
+        <div class="r70"><img class="road" onclick="createRoad('r70');"></div><div class="r71"><img class="road" onclick="createRoad('r71');"></div>
+    </div>
+    </div>
+    <div class="hexes">
+        <td id="a"><div class="hexagon">
+            <div class="hexTop"></div>
+            <div class="hexBottom"></div>
+        </div>
+        </td>
+        <td id="b"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="c"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td>
+    </tr>
+    <tr class="row2">
+        <td id="d"><div class="hexagon">
+            <div class="hexTop"></div>
+            <div class="hexBottom"></div>
+        </div></td><td id="e"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+
+    </div></td><td id="f"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="g"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td>
+    </tr>
+    <tr class="row3">
+        <td id="h"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="i"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="j"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="k"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="l"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td>
+    </tr>
+    <tr class="row4">
+        <td id="m"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="n"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="o"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="p"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td>
+    </tr>
+    <tr class="row5">
+        <td id="q"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="r"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td><td id="s"><div class="hexagon">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+    </div></td>
+    </tr>
+    </div>
+
+</table>
+<div class ="playerHand"></div>
+</body>
+<script src="catan.js">
+</script>
+
+</html>
